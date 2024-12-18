@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateColorSanphamsTable extends Migration
+class CreateSizeSanphamTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateColorSanphamsTable extends Migration
      */
     public function up()
     {
-        Schema::create('color_sanpham', function (Blueprint $table) {
-            $table->bigInteger('color_id')->unsigned();
-            $table->integer('sanpham_id');
-            $table->foreign('color_id')->references('id')->on('colors');
+        Schema::create('size_sanpham', function (Blueprint $table) {
+            $table->bigInteger('size_id')->unsigned();
+            $table->bigInteger('sanpham_id')->unsigned();
+            $table->foreign('size_id')->references('id')->on('size');
             $table->foreign('sanpham_id')->references('id')->on('sanpham');
         });
     }
@@ -28,6 +28,6 @@ class CreateColorSanphamsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('color_sanpham');
+        Schema::dropIfExists('size_sanpham');
     }
 }

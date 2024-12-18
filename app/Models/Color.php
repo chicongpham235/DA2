@@ -8,11 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Color extends Model
 {
     use HasFactory;
-    protected $table = 'colors';
-    protected $primaryKey ='id';
-    protected $fillable = ['color','code'];
+    protected $table = 'color';
+    protected $primaryKey = 'id';
+    protected $fillable = ['color', 'code'];
 
-    public function sanphams(){
+    public function sanphams()
+    {
         return $this->belongsToMany(Sanpham::class, 'color_sanpham');
     }
 

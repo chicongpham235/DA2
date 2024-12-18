@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOrdersTable extends Migration
+class CreateOrderTable extends Migration
 {
     /**
      * Run the migrations.
@@ -16,10 +16,10 @@ class CreateOrdersTable extends Migration
         Schema::create('order', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id')->unsigned();
-            $table->float('subtotal',15,3);
-            $table->float('discount',15,3);
-            $table->float('tax',15,3);
-            $table->float('total',15,3);
+            $table->float('subtotal', 15, 3);
+            $table->float('discount', 15, 3);
+            $table->float('tax', 15, 3);
+            $table->float('total', 15, 3);
             $table->string('firstname')->nullable();
             $table->string('lastname')->nullable();
             $table->string('phone')->nullable();

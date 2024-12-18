@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOrderItemsTable extends Migration
+class CreateOrderItemTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,7 @@ class CreateOrderItemsTable extends Migration
     {
         Schema::create('order_item', function (Blueprint $table) {
             $table->id();
-            $table->Integer('product_id');
+            $table->bigInteger('product_id')->unsigned();
             $table->bigInteger('order_id')->unsigned();
             $table->float('price');
             $table->boolean('rstatus')->default(false);
